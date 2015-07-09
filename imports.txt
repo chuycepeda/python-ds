@@ -1,0 +1,116 @@
+------------------------------------------------------------------------------
+
+Python Most Used Modules
+
+
+itertools (https://docs.python.org/2.7/library/itertools.html) 
+		  	itertools.product('ABCD', repeat=2)	 					AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD
+			itertools.permutations('ABCD', 2)	 					AB AC AD BA BC BD CA CB CD DA DB DC
+			itertools.combinations('ABCD', 2)	 					AB AC AD BC BD CD
+			itertools.combinations_with_replacement('ABCD', 2)	 	AA AB AC AD BB BC BD CC CD DD
+
+EXAMPLE FOR COUNTING ALL PERMUTATIONS IN A GIVEN STRING
+>>> import itertools
+>>> z = []
+>>> for i in itertools.permutations('abc',3): z.append(i)
+>>> z
+[('a', 'b', 'c'), ('a', 'c', 'b'), ('b', 'a', 'c'), ('b', 'c', 'a'), ('c', 'a', 'b'), ('c', 'b', 'a')]
+>>> z_list = [a+b+c for a,b,c in z]
+>>> z_list
+['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+>>> s = "abcabcabc"
+>>> counter = 0
+>>> for i in z_list: counter += s.count(i)
+>>> counter
+7
+
+
+
+
+collections (https://docs.python.org/2.7/library/collections.html)
+			collections.Counter			dict subclass for counting hashable objects	
+			collections.deque			list-like container with fast appends and pops on either end	
+			collections.OrderedDict		dict subclass that remembers the order entries were added	
+EXAMPLE COUNTER
+>>> Counter('abracadabra').most_common(3)
+[('a', 5), ('r', 2), ('b', 2)]
+>>> import re
+>>> words = re.findall(r'\w+', open('hamlet.txt').read().lower())
+>>> Counter(words).most_common(4)
+[('the', 1143), ('and', 966), ('to', 762), ('of', 669)]
+EXAMPLE DEQUE
+>>> queue = deque(["Eric", "John", "Michael"])
+>>> queue.append("Terry")           # Terry arrives
+>>> queue.append("Graham")          # Graham arrives
+>>> queue.popleft()                 # The first to arrive now leaves
+'Eric'
+>>> queue.popleft()                 # The second to arrive now leaves
+'John'
+>>> queue                           # Remaining queue in order of arrival
+deque(['Michael', 'Terry', 'Graham'])
+EXAMPLE ORDEREDDICT
+>>> d = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}
+>>> OrderedDict(sorted(d.items(), key=lambda t: t[0]))
+OrderedDict([('apple', 4), ('banana', 3), ('orange', 2), ('pear', 1)])
+>>> OrderedDict(sorted(d.items(), key=lambda t: t[1]))
+OrderedDict([('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)])
+
+
+
+
+heapq (https://docs.python.org/2.7/library/heapq.html)
+		This module provides an implementation of the heap queue algorithm, also known as the priority queue algorithm.
+		Heaps are binary trees for which every parent node has a value less than or equal to any of its children. This 
+		implementation uses arrays for which heap[k] <= heap[2*k+1] and heap[k] <= heap[2*k+2] for all k, counting 
+		elements from zero. For the sake of comparison, non-existing elements are considered to be infinite. The 
+		interesting property of a heap is that its smallest element is always the root, heap[0].
+EXAMPLE
+>>> def heapsort(iterable):
+...     h = []
+...     for value in iterable:
+...         heappush(h, value)
+...     return [heappop(h) for i in range(len(h)]
+>>> heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+
+random (https://docs.python.org/2.7/library/random.html)
+		This module implements pseudo-random number generators for various distributions.
+		For integers, uniform selection from a range. For sequences, uniform selection of a random element, a function 
+		to generate a random permutation of a list in-place, and a function for random sampling without replacement.
+EXAMPLE
+>>> random.random()        # Random float x, 0.0 <= x < 1.0
+0.37444887175646646
+>>> random.uniform(1, 10)  # Random float x, 1.0 <= x < 10.0
+1.1800146073117523
+>>> random.randint(1, 10)  # Integer from 1 to 10, endpoints included
+7
+>>> random.randrange(0, 101, 2)  # Even integer from 0 to 100
+26
+>>> random.choice('abcdefghij')  # Choose a random element
+'c'
+>>> items = [1, 2, 3, 4, 5, 6, 7]
+>>> random.shuffle(items)
+>>> items
+[7, 3, 2, 5, 6, 4, 1]
+>>> random.sample([1, 2, 3, 4, 5],  3)  # Choose 3 elements
+[4, 1, 5]
+
+
+time (https://docs.python.org/2.7/library/time.html)
+EXAMPLE
+>>>from time import time
+>>>def InsertionSort(A):
+...	start_time = time() # record the starting time
+...	for j in range(1, len(A)):
+...		key = A[j]
+...		i = j - 1
+...		while (i >=0) and (A[i] > key):
+...			A[i+1] = A[i]
+...			i = i - 1
+...		A[i+1] = key
+...	end_time = time() # record the ending time
+...	elapsed = end_time - start_time
+...	print "Elapsed time (ms): %s" % (elapsed)
+...	return A

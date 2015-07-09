@@ -1,0 +1,169 @@
+------------------------------------------------------------------------------
+
+Python Complexity Classes
+
+
+
+Lists: 
+       l = [1,2,3]
+       l = [1,'word',3]
+
+       When you need a mixed collection of data all in one place.
+       When the data needs to be ordered.
+       When your data requires the ability to be changed or extended. Remember, lists are mutable.
+       When you don't require data to be indexed by a custom value. Lists are numerically indexed and to retrieve an element, you must know its numeric position in the list.
+       When you need a stack or a queue. Lists can be easily manipulated by appending/removing elements from the beginning/end of the list.
+       When your data doesn't have to be unique. For that, you would use sets.
+
+       The list type is a container that holds a number of other objects, 
+       in a given order. The list type implements the sequence protocol, 
+       and also allows you to add and remove objects from the sequence.
+       Tuples support all operations that do not mutate the data structure (and with
+       the same complexity classes).
+
+                               Complexity
+Operation     | Example      | Class         | Notes
+--------------+--------------+---------------+-------------------------------
+Index         | l[i]         | O(1)	         |
+Store         | l[i] = 0     | O(1)	         |
+Length        | len(l)       | O(1)	         |
+Append        | l.append(5)  | O(1)	         |
+Pop	          | l.pop()      | O(1)          | list as a stack (LIFO), same as l.pop(-1)
+              | deque(l).popleft()           | list as a queue using collections.deque (FIFO)
+Clear         | l.clear()    | O(1)	         | similar to l = []
+
+Slice         | l[a:b]       | O(b-a)	       | l[1:5]:O(l)/l[:]:O(len(l)-0)=O(N)
+Extend        | l.extend(...)| O(len(...))   | depends only on len of extension
+Construction  | list(...)    | O(len(...))   | depends on length of argument
+
+check ==, !=  | l1 == l2     | O(N)          | O(len(string)) applies for strings
+Insert        | l[a:b] = ... | O(N)          |
+              | l.insert(i,e)| O(N)	         | insert element e at zero-based index i
+Delete        | del l[i]     | O(N)	         | 
+Remove        | l.remove(...)| O(N)	         | 
+Containment   | x in/not in l| O(N)	         | searches list
+Copy          | l.copy()     | O(N)	         | Same as l[:] which is O(N)
+Pop           | l.pop(0)     | O(N)          | 
+Index of      | l.index(e)   | O(N)          | return the zero-index index of element e
+Find          | l.find(e)    | O(N)          | return the zero-index index of element e or -1
+Index of      | l.rindex(e)  | O(N)          | return the zero-index index of element e starting from right to left
+Find          | l.rfind(e)   | O(N)          | return the zero-index index of element e or -1 starting from right to left
+Count         | l.count(e)   | O(N)          | return the occurrence of element e in lis
+
+Extreme value | min(l)/max(l)| O(N)	         |
+Reverse	      | l.reverse()  | O(N)	         |
+Iteration     | for v in l:  | O(N)          |
+                l[::2]       | O(N)          | give all even indexes starting from 0
+                l[1::2]      | O(N)          | give all odd indexes starting from 1
+
+Sort          | l.sort()     | O(N Log N)    | key/reverse change original l
+              | sorted(l)    | O(N Log N)    | key/reverse doesn't change original l
+Multiply      | k*l          | O(k N)        | 5*l is O(N): len(l)*l is O(N**2)
+
+
+
+
+
+Sets: 
+      s = set([1,2,3])
+
+      When you need a unique set of data: Sets check the unicity of elements based on hashes.
+      When your data constantly changes: Sets, just like lists, are mutable.
+      When you need a collection that can be manipulated mathematically: With sets it's easy to do operations like difference, union, intersection, etc.
+      When you don't need to store nested lists, sets, or dictionaries in a data structure: Sets don't support unhashable types.
+
+      A set is an unordered collection with no duplicate elements. 
+      Basic uses include membership testing and eliminating duplicate entries. 
+      Set objects also support mathematical operations like union, intersection, 
+      difference, and symmetric difference.
+      Sets have many more operations that are O(1) compared with lists and tuples.
+      Not needing to keep values in a specific order (which lists/tuples require)
+      allows for faster operations.
+      Frozen sets support all operations that do not mutate the data structure (and
+      with the same complexity classes).
+
+                               Complexity
+Operation     | Example      | Class         | Notes
+--------------+--------------+---------------+-------------------------------
+Length        | len(s)       | O(1)	         |
+Add           | s.add(e)     | O(1)	         | adds element e as an insert(0,e)
+Containment   | x in/not in s| O(1)	         | compare to list/tuple - O(N)
+Remove        | s.remove(5)  | O(1)	         | compare to list/tuple - O(N)
+Discard       | s.discard(5) | O(1)	         | 
+Pop           | s.pop()      | O(1)	         | compare to list - O(N)
+Clear         | s.clear()    | O(1)	         | similar to s = set()
+
+Construction  | set(...)     | len(...)      |
+check ==, !=  | s != t       | O(min(len(s),lent(t))
+<=/<          | s <= t       | O(len(s1))    | issubset
+>=/>          | s >= t       | O(len(s2))    | issuperset s <= t == t >= s
+Union         | s | t        | O(len(s)+len(t))
+Intersection  | s & t        | O(min(len(s),lent(t))
+Difference    | s - t        | O(len(t))     |
+Symmetric Diff| s ^ t        | O(len(s))     |
+
+Iteration     | for v in s:  | O(N)          |
+Copy          | s.copy()     | O(N)	         |
+
+
+
+
+Dictionaries: 
+              d = {u'api_key': u'mwkMqTWFnK0LzJHyfkeBGoS2hr2KG7WhHqSGX0SbDJ4', u'container': u'CONTENTSHERE', u'channel': u'CHANNELHERE'}
+              d = dict([('as',1),('king',10)])
+
+              When you need a logical association between a key:value pair.
+              When you need fast lookup for your data, based on a custom key.
+              When your data is being constantly modified. Remember, dictionaries are mutable.
+
+              Dictionaries are sometimes found in other languages as 
+              “associative memories” or “associative arrays”. Unlike sequences, 
+              which are indexed by a range of numbers, dictionaries are indexed 
+              by keys, which can be any immutable type; strings and numbers can 
+              always be keys. Most dict operations are O(1).
+              It is best to think of a dictionary as an unordered set of key:value 
+              pairs, with the requirement that the keys are unique (within one 
+              dictionary). A pair of braces creates an empty dictionary: {}. Placing 
+              a comma-separated list of key:value pairs within the braces adds initial 
+              key:value pairs to the dictionary; this is also the way dictionaries are 
+              written on output.
+              The main operations on a dictionary are storing a value with some key and 
+              extracting the value given the key. It is also possible to delete a key:value 
+              pair with del. If you store using a key that is already in use, the old value 
+              associated with that key is forgotten. It is an error to extract a value 
+              using a non-existent key.
+              The keys() method of a dictionary object returns a list of all the keys used 
+              in the dictionary, in arbitrary order (if you want it sorted, just apply the 
+              sorted() function to it). To check whether a single key is in the dictionary, 
+              use the in keyword. The values() method returns a list of all values used.
+
+                               Complexity
+Operation     | Example      | Class         | Notes
+--------------+--------------+---------------+-------------------------------
+Index         | d[k]         | O(1)	         | if k doesn't exists it throws KeyError
+Store         | d[k] = v     | O(1)	         |
+Length        | len(d)       | O(1)	         |
+Delete        | del d[k]     | O(1)	         |
+get/setdefault| d.method     | O(1)	         |
+              | d.get(k)     | O(1)          | if k doesn't exists it throws None
+Pop           | d.pop(k)     | O(1)	         |
+Pop item      | d.popitem()  | O(1)	         | pops the first element as key,value tuple (FIFO)
+Clear         | d.clear()    | O(1)	         | similar to s = {} or = dict()
+Views         | d.keys()     | O(1)          | list of keys
+              | d.values()   | O(1)          | list of values
+              | d.items()    | O(1)	         | list of tuples as (key,value)
+
+Construction  | dict(...)    | len(...)      |
+
+Iteration     | for k in d:  | O(N)          | all forms: keys, values, items
+   for k,v in d.iteritems()  | O(N)          | for key, value pairs as k and v
+
+
+
+
+Trees, Graphs ?  Think of tuples for example: ('a','b', 7)
+
+
+
+
+
