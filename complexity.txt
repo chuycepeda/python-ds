@@ -7,6 +7,7 @@ Python Complexity Classes
 Lists: 
        l = [1,2,3]
        l = [1,'word',3]
+       l[0] = 1
 
        When you need a mixed collection of data all in one place.
        When the data needs to be ordered.
@@ -21,8 +22,8 @@ Lists:
        Tuples support all operations that do not mutate the data structure (and with
        the same complexity classes).
 
-                               Complexity
-Operation     | Example      | Class         | Notes
+                               
+Operation     | Example      | Complexity    | Notes
 --------------+--------------+---------------+-------------------------------
 Index         | l[i]         | O(1)	         |
 Store         | l[i] = 0     | O(1)	         |
@@ -48,7 +49,7 @@ Index of      | l.index(e)   | O(N)          | return the zero-index index of el
 Find          | l.find(e)    | O(N)          | return the zero-index index of element e or -1
 Index of      | l.rindex(e)  | O(N)          | return the zero-index index of element e starting from right to left
 Find          | l.rfind(e)   | O(N)          | return the zero-index index of element e or -1 starting from right to left
-Count         | l.count(e)   | O(N)          | return the occurrence of element e in lis
+Count         | l.count(e)   | O(N)          | return the occurrence of element e in l
 
 Extreme value | min(l)/max(l)| O(N)	         |
 Reverse	      | l.reverse()  | O(N)	         |
@@ -82,25 +83,25 @@ Sets:
       Frozen sets support all operations that do not mutate the data structure (and
       with the same complexity classes).
 
-                               Complexity
-Operation     | Example      | Class         | Notes
+                               
+Operation     | Example      | Complexity    | Notes
 --------------+--------------+---------------+-------------------------------
 Length        | len(s)       | O(1)	         |
 Add           | s.add(e)     | O(1)	         | adds element e as an insert(0,e)
 Containment   | x in/not in s| O(1)	         | compare to list/tuple - O(N)
 Remove        | s.remove(5)  | O(1)	         | compare to list/tuple - O(N)
 Discard       | s.discard(5) | O(1)	         | 
-Pop           | s.pop()      | O(1)	         | compare to list - O(N)
+Pop           | s.pop()      | O(1)	         | compare to list - O(N), pops leftmost or FIFO
 Clear         | s.clear()    | O(1)	         | similar to s = set()
 
 Construction  | set(...)     | len(...)      |
 check ==, !=  | s != t       | O(min(len(s),lent(t))
 <=/<          | s <= t       | O(len(s1))    | issubset
 >=/>          | s >= t       | O(len(s2))    | issuperset s <= t == t >= s
-Union         | s | t        | O(len(s)+len(t))
-Intersection  | s & t        | O(min(len(s),lent(t))
-Difference    | s - t        | O(len(t))     |
-Symmetric Diff| s ^ t        | O(len(s))     |
+Union         | s | t        | O(len(s)+len(t)) | concatenation
+Intersection  | s & t        | O(min(len(s),lent(t))  | coincidence elements
+Difference    | s - t        | O(len(t))     | s minus elements in t that are in s
+Symmetric Diff| s ^ t        | O(len(s))     | concatenation without coincidence elements
 
 Iteration     | for v in s:  | O(N)          |
 Copy          | s.copy()     | O(N)	         |
@@ -109,7 +110,7 @@ Copy          | s.copy()     | O(N)	         |
 
 
 Dictionaries: 
-              d = {u'api_key': u'mwkMqTWFnK0LzJHyfkeBGoS2hr2KG7WhHqSGX0SbDJ4', u'container': u'CONTENTSHERE', u'channel': u'CHANNELHERE'}
+              d = {'api_key': 'mwkMqTWFnK0LzJHyfkeBGoS2hr2KG7WhHqSGX0SbDJ4', 'container': 'CONTENTSHERE', 'channel': 'CHANNELHERE'}
               d = dict([('as',1),('king',10)])
 
               When you need a logical association between a key:value pair.
@@ -137,8 +138,8 @@ Dictionaries:
               sorted() function to it). To check whether a single key is in the dictionary, 
               use the in keyword. The values() method returns a list of all values used.
 
-                               Complexity
-Operation     | Example      | Class         | Notes
+                               
+Operation     | Example      | Complexity    | Notes
 --------------+--------------+---------------+-------------------------------
 Index         | d[k]         | O(1)	         | if k doesn't exists it throws KeyError
 Store         | d[k] = v     | O(1)	         |
