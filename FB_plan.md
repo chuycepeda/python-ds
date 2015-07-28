@@ -356,16 +356,16 @@
 * <span style="color: #FF4081">LIST</span>
 
 	*Description:*
-	
-	    	The list type is a container that holds a number of other objects, 
-        	in a given order. The list type implements the sequence protocol, 
-        	and also allows you to add and remove objects from the sequence.
+    
+    	The list type is a container that holds a number of other objects,
+    	in a given order. The list type implements the sequence protocol,
+    	and also allows you to add and remove objects from the sequence.
 	
 	*Implementation:*
-		
-	    	l = [1,2,3]
-        	l = [1,'word',3]
-	        l[0] = 1	   		
+    
+    	l = [1,2,3]
+    	l = [1,'word',3]
+    	l[0] = 1	   		
 	
 	*Operations:*
     
