@@ -1,8 +1,6 @@
 # 1 - Make a minesweeper of size LxW with M amount of mines distributed randomly
 # 2 - Where no mine is found give away the sum of mines around the cell.
 
-
-
 import random
 
 def try_ex(x,y,grid):
