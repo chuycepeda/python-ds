@@ -332,23 +332,23 @@
 <hr style="border-color:green">
 1. EXAMPLIFY
 
-	Write out specific examples until finding|deriving a rule of simplification or formula. Think of x equations (examples) and y variables.
+		Write out specific examples until finding|deriving a rule of simplification or formula. Think of x equations (examples) and y variables.
 
 2. PATTERN MATCHING
 
-	Think of familiarity and experience with past problems and modify solution in mind to the related problem. Most of the times a clue is found while carefully listening the problem description. Example: Clock angle.
+		Think of familiarity and experience with past problems and modify solution in mind to the related problem. Most of the times a clue is found while carefully listening the problem description. Example: Clock angle.
 
 3. SIMPLIFY & GENERALIZE
 
-	This is a multi-step approach useful when constraints are given. First we simplify a constraint such as the amount of data or memory, and solve for this simpler problem. Once we had it, we adapt the earlier solution for the more complex version. Example: Magazine words
+		This is a multi-step approach useful when constraints are given. First we simplify a constraint such as the amount of data or memory, and solve for this simpler problem. Once we had it, we adapt the earlier solution for the more complex version. Example: Magazine words
 
 4. BASE CASE AND BUILD
 
-	This is a useful approach when you find a clue for recursion. Try first to solve for n=1, then n=1 and n=2, and it's very possible for you to find a recursive approach when solved to n=4. Example: Permutations
+		This is a useful approach when you find a clue for recursion. Try first to solve for n=1, then n=1 and n=2, and it's very possible for you to find a recursive approach when solved to n=4. Example: Permutations
 
 5. DATA STRUCTURE BRAINSTORM
 
-	It's hacky and works. Use different data structures as examples and try to apply each one. You'll be surprised of how easy is to find the best data structure for your problem. Example: Median in growing array.
+		It's hacky and works. Use different data structures as examples and try to apply each one. You'll be surprised of how easy is to find the best data structure for your problem. Example: Median in growing array.
 
 
 **DATA STRUCTURES**
@@ -357,15 +357,15 @@
 
 	*Description:*
 	
-	   The list type is a container that holds a number of other objects, 
-       in a given order. The list type implements the sequence protocol, 
-       and also allows you to add and remove objects from the sequence.
+	    The list type is a container that holds a number of other objects, 
+        in a given order. The list type implements the sequence protocol, 
+        and also allows you to add and remove objects from the sequence.
 	
 	*Implementation:*
 		
-	   l = [1,2,3]
-       l = [1,'word',3]
-       l[0] = 1	   		
+	    l = [1,2,3]
+        l = [1,'word',3]
+        l[0] = 1	   		
 	
 	*Operations:*
     
@@ -373,21 +373,21 @@
        
     *Typical use:*
     
-       When you need a mixed collection of data all in one place.
+        When you need a mixed collection of data all in one place.
        
-       When the data needs to be ordered.
+        When the data needs to be ordered.
        
-       When your data requires the ability to be changed or extended. Remember, 
-       lists are mutable.
+        When your data requires the ability to be changed or extended. Remember, 
+        lists are mutable.
        
-       When you don't require data to be indexed by a custom value. Lists are 
-       numerically indexed and to retrieve an element, you must know its numeric 
-       position in the list.
+        When you don't require data to be indexed by a custom value. Lists are 
+        numerically indexed and to retrieve an element, you must know its numeric 
+        position in the list.
        
-       When you need a stack or a queue. Lists can be easily manipulated by 
-       appending/removing elements from the beginning/end of the list.
+        When you need a stack or a queue. Lists can be easily manipulated by 
+        appending/removing elements from the beginning/end of the list.
        
-       When your data doesn't have to be unique. For that, you would use sets.
+        When your data doesn't have to be unique. For that, you would use sets.
        
     *Problem clues:*
     
