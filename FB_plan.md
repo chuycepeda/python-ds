@@ -82,23 +82,23 @@
 
 	**The Stack**: *global and local scope variables*
 	
-       What is the stack? 
-       It's a special region of your computer's memory that stores temporary 
-       variables created by each function (including the main() function). The 
-       stack is a "FILO" (first in, last out) data structure, that is managed and 
-       optimized by the CPU quite closely. Every time a function declares a new 
-       variable, it is "pushed" onto the stack. Then every time a function exits, 
-       all of the variables pushed onto the stack by that function, are freed (that 
-       is to say, they are deleted). Once a stack variable is freed, that region of 
-       memory becomes available for other stack variables.
+        What is the stack? 
+        It's a special region of your computer's memory that stores temporary 
+        variables created by each function (including the main() function). The 
+        stack is a "FILO" (first in, last out) data structure, that is managed and 
+        optimized by the CPU quite closely. Every time a function declares a new 
+        variable, it is "pushed" onto the stack. Then every time a function exits, 
+        all of the variables pushed onto the stack by that function, are freed (that 
+        is to say, they are deleted). Once a stack variable is freed, that region of 
+        memory becomes available for other stack variables.
 		
-	   The advantage of using the stack to store variables, is that memory is
-	   managed for you. You don't have to allocate memory by hand, or free it once 
-	   you don't need it any more. What's more, because the CPU organizes stack 
-	   memory so efficiently, reading from and writing to stack variables is very 
-	   fast.
+	    The advantage of using the stack to store variables, is that memory is
+	    managed for you. You don't have to allocate memory by hand, or free it once 
+	    you don't need it any more. What's more, because the CPU organizes stack 
+	    memory so efficiently, reading from and writing to stack variables is very 
+	    fast.
 		
-	   To summarize the stack:
+	    To summarize the stack:
 
 			- the stack grows and shrinks as functions push and pop local variables
 			- there is no need to manage the memory yourself, variables are 
