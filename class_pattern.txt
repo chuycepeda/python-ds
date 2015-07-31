@@ -36,7 +36,7 @@ class Progression(object):
 		return self
 
 	def __str__(self):
-		""" <CONVENTIONAL METHOD> By convention, roduce string representation of vector."""
+		""" <CONVENTIONAL METHOD> By convention, reduce string representation of vector."""
 		return "'" + self + "'"
 	
 	def print_progression(self, n):

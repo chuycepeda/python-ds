@@ -79,6 +79,7 @@ class FibonacciProgression(Progression):
 def main():
 	print( "Default progression:" )
 	Progression().print_progression(10)
+	Progression().print_progression(8)
 	print( "Arithmetic progression with increment 5:" )
 	ArithmeticProgression(5).print_progression(10)
 	print( "Arithmetic progression with increment 5 and start 2:" )
