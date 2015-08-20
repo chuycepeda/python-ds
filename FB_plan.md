@@ -1400,7 +1400,7 @@
 **<span style="color:#F73D16; font-weight:900; font-size:18px">PYTHON [TRICKS](http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html) & [BUILT-INS](https://docs.python.org/2/library/functions.html)</span>**
 <hr style="border-color:#F73D16">
 
-** args and kwargs **
+**args and kwargs**
 
 	*args : additional arguments
 	
@@ -1659,7 +1659,6 @@
 	>>> counter
 	7
 	
-	EXAMPLE BINARY COUNT
 
 **Random** *(python module)*
 
@@ -1914,7 +1913,6 @@
 		Breadth first and depth first are useful graph traversal and searching algorithms. 
 		
 		DFS is typically the easiest if we want to visit every node in the graph, or at least visit every node until we find whatever we're looking for. However, if we have a very large tree and want to be prepared to quit when we get too far from the original node, DFS can be problematic; we might search thousands of ancestors of the node, but never even search all of the node's children. In these cases, BFS is typically preferred
-		
 		
 		This is an excellent representation in python. Given the graph implementation in section Data Structures:
 		
