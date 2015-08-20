@@ -192,12 +192,8 @@ if __name__ == "__main__":
     print("Graph density:")
     print(graph.density())
 
-    path_vars = input('Tell me a path to find.')
-    path_vars = path_vars.split(" ")
-    origin = path_vars[0]
-    target = path_vars[1]
-    print("Here are all paths:")
-    print(graph.find_all_paths(origin, target))
+    print("Here are all paths for a->e:")
+    print(graph.find_all_paths("a", "e"))
 
 
 

@@ -93,15 +93,16 @@ Remove        | s.remove(5)  | O(1)	         | compare to list/tuple - O(N)
 Discard       | s.discard(5) | O(1)	         | 
 Pop           | s.pop()      | O(1)	         | compare to list - O(N), pops leftmost or FIFO
 Clear         | s.clear()    | O(1)	         | similar to s = set()
+Update        | s.update(t)  | O(len(s)+len(t))| return set s with elements added from t
 
 Construction  | set(...)     | len(...)      |
 check ==, !=  | s != t       | O(min(len(s),lent(t))
 <=/<          | s <= t       | O(len(s1))    | issubset
 >=/>          | s >= t       | O(len(s2))    | issuperset s <= t == t >= s
 Union         | s | t        | O(len(s)+len(t)) | concatenation
-Intersection  | s & t        | O(min(len(s),lent(t))  | coincidence elements
-Difference    | s - t        | O(len(t))     | s minus elements in t that are in s
-Symmetric Diff| s ^ t        | O(len(s))     | concatenation without coincidence elements
+Intersection  | s & t        | O(min(len(s),lent(t))  | coincidence elements, using &= returns set s keeping only elements also found in t
+Difference    | s - t        | O(len(t))     | s minus elements in t that are in s, using -= returns set s after removing elements found in t
+Symmetric Diff| s ^ t        | O(len(s))     | concatenation without coincidence elements, using ^= returns set s with elements from s or t but not both
 
 Iteration     | for v in s:  | O(N)          |
 Copy          | s.copy()     | O(N)	         |
@@ -162,7 +163,7 @@ Iteration     | for k in d:  | O(N)          | all forms: keys, values, items
 
 
 
-Trees, Graphs ?  Think of tuples for example: ('a','b', 7)
+Trees, Graphs ?  Think of tuples, dictionaries and/or collections.defaultdict.
 
 
 
