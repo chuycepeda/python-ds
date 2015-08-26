@@ -17,15 +17,13 @@ class BinaryTree():
         self.rootid = value
     def getNodeValue(self):
         return self.rootid
-
     def insertRight(self,newNode):
         if self.right == None:
             self.right = BinaryTree(newNode)
         else:
             tree = BinaryTree(newNode)
             tree.right = self.right
-            self.right = tree
-        
+            self.right = tree        
     def insertLeft(self,newNode):
         if self.left == None:
             self.left = BinaryTree(newNode)

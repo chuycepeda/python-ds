@@ -159,7 +159,15 @@ if __name__ == "__main__":
           "f" : []
         }
 
-    graph = Graph(g)
+    z = dict()
+    z["a"]=["d"]
+    z["c"]=["b","c","d","e"]
+    z["b"]=["c"]
+    z["e"]=["c"]
+    z["d"]=["a","c"]
+    z["f"]=[]
+
+    graph = Graph(z)
 
     print("Vertices of graph:")
     print(graph.vertices())

@@ -1,0 +1,36 @@
+MACHINE LEARNING
+     
+Algorithm                | Pros                               | Cons                                        | Good at
+-------------------------+------------------------------------+---------------------------------------------+---------------------------------------------
+Linear regression        | Very fast (runs in constant time)  | Unable to model complex relationships       | The first look at a dataset
+                         | Easy to understand the model       | Unable to capture nonlinear relationships   | Numerical data with lots of features
+                         | Less prone to overfitting          | without first transforming the inputs
+-------------------------+------------------------------------+---------------------------------------------+---------------------------------------------
+Decision trees           | Fast                               | Complex trees are hard to interpret         | Star classification
+                         | Robust to noise and missing values | Duplication within the same sub-tree is     | Medical diagnosis
+                         | Accurate                           | possible                                    | Credit risk analysis
+-------------------------+------------------------------------+---------------------------------------------+---------------------------------------------
+Neural networks          | Extremely powerful                 | Prone to overfitting                        | Images
+                         | Can model even very complex        | Long training time                          | Video
+                         | relationships                      | Requires significant computing power for    | “Human-intelligence” type tasks like 
+                         | No need to understand the          | large datasets                              | driving or flying
+                         | underlying data                    | Model is essentially unreadable             | Robotics            
+                         | Almost works by “magic”            |                                             |
+-------------------------+------------------------------------+---------------------------------------------+---------------------------------------------
+Support Vector Machines  | Can model complex, nonlinear       | Need to select a good kernel function       | Classifying proteins
+                         | relationships                      | Model parameters are difficult to interpret | Text classification
+                         | Robust to noise (because they      | Sometimes numerical stability problems      | Image classification
+                         | maximize margins)                  | Requires significant memory and processing  | Handwriting recognition
+                         |                                    | powerful                                    | 
+-------------------------+------------------------------------+---------------------------------------------+---------------------------------------------
+K-Nearest Neighbors      | Simple                             | Expensive and slow to predict new instances | Low-dimensional datasets
+                         | Powerful                           | Must define a meaningful distance function  | Computer security: intrusion detection
+                         | No training involved (“lazy”)      | Performs poorly on high-dimensionality      | Fault detection in semiconducter 
+                         | Naturally handles multiclass       | datasets                                    | manufacturing
+                         | classification and regression      |                                             | Video content retrieval
+                         |                                    |                                             | Gene expression and proteins interactions
+-------------------------+------------------------------------+---------------------------------------------+---------------------------------------------
+
+
+
+

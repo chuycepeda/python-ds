@@ -165,7 +165,3 @@ Iteration     | for k in d:  | O(N)          | all forms: keys, values, items
 
 Trees, Graphs ?  Think of tuples, dictionaries and/or collections.defaultdict.
 
-
-
-
-

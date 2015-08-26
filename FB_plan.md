@@ -653,6 +653,34 @@
 		- I no longer have to worry about making my application run in multiple Web servers: most servers, and all frameworks, are WSGI compliant.
 		- WSGI is Python's Answer to Ruby On Rails
 
+<span style="color:#7EB932; font-weight:900; font-size:18px">Why Cloud Computing ?</span>
+<hr style="border-color:#7EB932">
+	
+	Automation – “Scriptable infrastructure”: You can create repeatable build and deployment systems by leveraging programmable (API-driven) infrastructure.
+
+	Auto-scaling: You can scale your applications up and down to match your unexpected demand without any human intervention. 
+	
+	Auto-scaling encourages automation and drives more efficiency.
+
+	Proactive Scaling: Scale your application up and down to meet your anticipated demand with proper planning understanding of your traffic patterns so that you keep your costs low while scaling.
+	
+	More Efficient Development lifecycle: Production systems may be easily cloned for use as development and test environments. Staging environments may be easily promoted to production.
+
+	Improved Testability: Never run out of hardware for testing. Inject and automate testing at every stage during the development process. You can spawn up an “instant test lab” with pre-configured environments only for the duration of testing phase.
+
+	Disaster Recovery and Business Continuity: The cloud provides a lower cost option for maintaining a fleet of DR servers and data storage. With the cloud, you can take advantage of geo-distribution and replicate the environment in other location within minutes.
+
+	“Overflow” the traffic to the cloud: With a few clicks and effective load balancing tactics, you can create a complete overflow-proof application by routing excess traffic to the cloud.
+
+
+<span style="color:#7EB932; font-weight:900; font-size:18px">Machine Learning Briefs</span>
+<hr style="border-color:#7EB932">
+
+
+<img src="https://lh4.googleusercontent.com/vKBRfdfbZamxqBNQB9QGR-9Rc2k42v6LGsyOOpELcABEOHrXtrz8nQKGYN5M-JEHmjlYwL6N33hwngw=w2560-h1639-rw" style="width:100%">
+
+
+
 <br>
 
 		
@@ -678,20 +706,28 @@
 
 <span style="color:#612EE0; font-weight:900; font-size:18px">MODELING</span>
 <hr style="border-color:#612EE0">
-	Explains the best practices from twitter, amazon, google and facebook architectures.
+	Explains the best practices from big, scalable, world class architectures.
 
-**Twitter**
 
-	.
-**Amazon**
+**Google (http://hypertable.com/documentation/architecture/)**
 
-	.
-**Google**
-
-	.
+	Let be known that Google stands for a googol, which is the large number 10^100; that is, the digit 1 followed by 100 zeroes. This was used as a metaphor for indexing the whole web using PageRank algorithm: 
+	
+		PR(A) = (1-d) + d (PR(T1)/C(T1) + ... + PR(Tn)/C(Tn)) (http://infolab.stanford.edu/pub/papers/google.pdf)
+		
+	Datacenters are filled up daily by www traffic, continous crawl and indexing (caffeine), latency-sensitive apps (gmail) and user-user plus user-group sharings (docs). These data is handled by Google's distributed systems infrastructure: Google File System (Hadoop), Google BigTable and MapReduce (Hadoop).
+	
+	BigTable is widely used for web indexing, searches, millions of read/writes and several google products as it serves as a distributed storage system for managing structured data. It distributes data as a sorted map, which is physically sorted on a hashed row-key approach (e.g. com.yahoo.www).
+	
 **Facebook**
 
-	.
+	Facebook is LAMP: linux, apache, mySQL and PHP.
+	
+	Hashed, horizontal sharding based upon Stanford and Carnegie universities. Use of memcache for "hot" sql transfers across Cassandra, MySQL, Hadoop HBase (Log processing, Recommendation Systems, and Data Warehouse) and HayStack (Photos).
+	
+	Engineers had to work with two data stores and very different data models: a large cluster of MySQL servers for storing data persistently in relational tables, and an equally large collection of memcache servers for storing and serving flat key-value pairs derived (some indirectly) from the results of SQL queries.
+	
+	For hardware details, look at: http://www.opencompute.org/
 
 <span style="color:#612EE0; font-weight:900; font-size:18px">SCALABILITY & MEMORY LIMITS</span>
 <hr style="border-color:#612EE0">
@@ -918,13 +954,9 @@
        
         When your data doesn't have to be unique. For that, you would use sets.
        
-    *Problem clues:*
-    
-    	For regular list:
+    	When you need order as LIFO:  the stack implementation (append(), pop())
     	
-    	For the stack implementation (append(), pop(), LIFO):
-    	
-    	For the deque implementation (append(), popleft(), FIFO):
+    	When you need order as FIFO:  the deque implementation (append(), popleft())
     	
 		
 	* <span style="color: #FF4081">TUPLE</span>
@@ -1020,18 +1052,16 @@
 		
 	*Typical use:*
     
-    	When you need a unique set of data: Sets check the unicity of elements 
-    	based on hashes.
+    	When you need a unique set of data: Sets check the unicity of elements based on hashes.
+    	
       	When your data constantly changes: Sets, just like lists, are mutable.
-      	When you need a collection that can be manipulated mathematically: With 
-      	sets it's easy to do operations like difference, union, intersection, etc.
-      	When you don't need to store nested lists, sets, or dictionaries in a data 
-      	structure: Sets don't support unhashable types.
+      	
+      	When you need a collection that can be manipulated mathematically: with sets it's easy to do operations like 
+      	difference, union, intersection, etc.
+      	
+      	When you don't need to store nested lists, sets, or dictionaries in a data structure: Sets don't support unhashable 
+      	types.
 
-    		
-    *Problem clues:*
-    
-    	.
 
 * <span style="color: #8AC258">DICTIONARY</span>
 
@@ -1095,15 +1125,18 @@
 	*Typical use:*
     
     	When you need a logical association between a key:value pair.
+    	
     	When you need fast lookup for your data, based on a custom key.
-    	When your data is being constantly modified. Remember, dictionaries are 
-    	mutable.
+    	
+    	When your data is being constantly modified. Remember, dictionaries are mutable.
     		
-    *Problem clues:*
-    
-    	.
+  
 	* <span style="color: #8AC258">ORDEREDDICT</span>
 
+		*Description*
+			
+			An OrderedDict is a type of dictionary that remembers the order entries were added.
+			
 		*Implementation:*
     
     		>>> from collections import OrderedDict
@@ -1114,6 +1147,26 @@
 			OrderedDict([('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)])
 	
 	* <span style="color: #8AC258">DEFAULTDICT</span>
+	
+		*Description*
+			
+			A defaultdict is a type of dictionary that calls a factory function to supply missing values. For example:
+			>>> s = 'missisipi'
+			
+			#regular dictionary
+			>>> d = dict()			
+			>>> for k in s: d[k] += 1
+			Traceback (most recent call last):
+  			File "<stdin>", line 1, in <module>
+			KeyError: 'm'
+			
+			#defaultdict
+			>>> dd = collections.defaultdict(int)
+			>>> for k in s: dd[k] += 1
+			>>> dd
+			defaultdict(<type 'int'>, {'i': 4, 'p': 1, 's': 3, 'm': 1})
+			>>>
+			
 
 		*Implementation:*
     
@@ -1124,13 +1177,33 @@
 			>>> import json
 			>>> print(json.dumps(some_dict))
 			{"colours": {"favourite": "yellow"}}
+			
+			>>> s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+			>>> d = defaultdict(list)
+			>>> for k, v in s: d[k].append(v)
+			>>> d.items()
+			[('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])]
+			
+			>>> s = 'mississippi'
+			>>> d = defaultdict(int)
+			>>> for k in s: d[k] += 1
+			>>> d.items()
+			[('i', 4), ('p', 2), ('s', 4), ('m', 1)]
 	
 
 	* <span style="color: #8AC258">GRAPH</span>
+	
+		<img src="http://i.stack.imgur.com/PC6Eh.png" style="margin-left:10%; ">
 
 		*Description:*	
 		
-			.	   		
+			A data structure including cycles and paths in-between its nodes. You can say that a graph is a tree where child nodes have multiple parents usually called predecessors, and parent-parent relationships are possible (cycles).
+			
+			# Figure above as A, B and C nodes
+			g = dict()
+			g["a"]=["b"]
+			g["b"]=["c"]
+			g["c"]=["a","b"]   		
 	
 		*Implementation:*
     
@@ -1292,109 +1365,236 @@
 			    graph = Graph(g)			   		   
 			    			     
 			    # or maybe
-			    >>> from collections import defaultdict
-			    >>> z = defaultdict()
-				>>> z["a"]=["d"]
-				>>> z["c"]=["b","c","d","e"]
-				>>> z["b"]=["c"]
-				>>> z["e"]=["c"]
-				>>> z["d"]=["a","c"]
-				>>> z["f"]=[]
+			    z = dict()
+				z["a"]=["d"]
+				z["c"]=["b","c","d","e"]
+				z["b"]=["c"]
+				z["e"]=["c"]
+				z["d"]=["a","c"]
+				z["f"]=[]
 				
-				graph = Graph(dict(z))
+				graph = Graph(z)
 			    	   		
 	
 		*Operations:*
     
-    		graph.vertices()
-			graph.edges()
-			graph.add_vertex("z")
-			graph.add_edge({"a","z"})
+    		graph.vertices()					#O(|V|)
+			graph.edges()						#O(|E|)
+			graph.add_vertex("z")				#O(1)
+			graph.add_edge({"a","z"})			#O(1)
 			graph.density()
 			graph.find_all_paths("a", "e")
 		
 		*Typical use:*
     
-    		.
+    		* Modeling a computer network
     		
-    	*Problem clues:*
-    
-    		.
+    		* Modeling a city map
+    		
+    		* Social networks
+    		
+    		* State machines
+		
+		*Traversal: DFS & BFS*
+									
+    		Breadth first and depth first are useful graph traversal and searching algorithms. 
+		
+			DFS is typically the easiest if we want to visit every node in the graph, or at least visit every node until we find whatever we're looking for. However, if we have a very large tree and want to be prepared to quit when we get too far from the original node, DFS can be problematic; we might search thousands of ancestors of the node, but never even search all of the node's children. In these cases, BFS is typically preferred.
+			
+			DFS PSEUDOCODE:
+				Visit all successors first, usually through recursion. Pseudocode:
+			
+				def DFS(node):
+					for child in node:
+						DFS(child)
+					print ("visited %s" % node)
+					
+			BFS PSEUDOCODE:
+				Visit nearest nodes, usually through queues. Pseudocode:
+			
+				def BFS(node):
+					queue.append(node)
+					while queue not empty
+						v = queue.popleft()
+						print ("visited %s" % v)
+						for child in v:
+							queue.append(child)
+		
+			Note: the given python class for graph implementation has its own search methods.
+    	
 
 	* <span style="color: #8AC258">TREES</span>
 	
-			Binary Tree vs. Binary Search Tree
+		<img src="http://i.stack.imgur.com/Ei6qd.png" style="margin-left:10%; ">
+
+		*Description:*	
+
+	
+			A tree is essentially a restricted form of a graph where there are no cycles, no directions, and there's always a parent-child (root-leaf) relationship between nodes.
+			
+			Binary Tree vs. Binary Search Tree (BST, searches O(log2(n)))
 			When given a binary tree question, many candidates assume that the interviewer means binary search tree. Be sure to ask whether or not the tree is a binary search tree. A binary search tree imposes the condition that, for all nodes, the left children are less than or equal to the current node, which is less than all the right nodes.
 
-			Balanced vs. Unbalanced		
-			While many trees are balanced, not all are. Ask your interviewer for clarification on this issue. If the tree is unbalanced, you should describe your algorithm in terms of both the average and the worst case time. Note that there are multiple ways to balance a tree, and balancing a tree implies only that the depth of subtrees will not vary by more than a certain amount. It does not mean that the left and right subtrees are exactly the same size.
+			Balanced (h = log2(n)) vs. Unbalanced
+			A balanced tree implies that for each node its subtrees contain nearly equal number of nodes. While many trees are balanced, not all are. Ask your interviewer for clarification on this issue. If the tree is unbalanced, you should describe your algorithm in terms of both the average and the worst case time. Note that there are multiple ways to balance a tree, and balancing a tree implies only that the depth of subtrees will not vary by more than a certain amount. It does not mean that the left and right subtrees are exactly the same size.
 
 			Full and Complete
-			Full and complete trees are trees in which all leaves are at the bottom of the tree, anD all non-leaf nodes have exactly two children. Note that full and complete trees are extremely rare, as a tree must have exactly 2n - 1 nodes to meet this condition
+			Full and complete trees are trees in which all leaves are at the bottom of the tree, and all non-leaf nodes have exactly two children. Note that full and complete trees are extremely rare, as a tree must have exactly 2n - 1 nodes to meet this condition
 			
 			Binary Tree Traversal
 			Prior to your interview, you should be comfortable implementing in-order, post-order, and pre-order traversal. The most common of these, in-order traversal, works by visiting the left side, then the current node, then the right.
+	
 	
 		**<span style="color:#86C163">BINARY TREE</span>**
 
 		*Description:*	
 		
-			.	   		
+			This is the most widespread form of a tree-like data structure, each node has at most 2 children.	   		
 	
 		*Implementation:*
     
-    		class BinaryTree():
+    			class BinaryTree():
 
-    			def __init__(self,rootid):
-      				self.left = None
-      				self.right = None
-      				self.rootid = rootid
-
-    			def getLeftChild(self):
-        			return self.left
-    			
-    			def getRightChild(self):
-        			return self.right
-    
-    			def setNodeValue(self,value):
-        			self.rootid = value
-    
-    			def getNodeValue(self):
-        			return self.rootid	   		
-	
+    				def __init__(self,rootid):
+      					self.left = None
+      					self.right = None
+      					self.rootid = rootid
+      					
+    				def getLeftChild(self):
+        				return self.left
+    				def getRightChild(self):
+        				return self.right
+    				def setNodeValue(self,value):
+        				self.rootid = value
+    				def getNodeValue(self):
+        				return self.rootid
+    				def insertRight(self,newNode):
+        				if self.right == None:
+            				self.right = BinaryTree(newNode)
+        				else:
+            				tree = BinaryTree(newNode)
+            				tree.right = self.right
+            				self.right = tree        
+    				def insertLeft(self,newNode):
+        				if self.left == None:
+            				self.left = BinaryTree(newNode)
+        				else:
+            				tree = BinaryTree(newNode)
+            				self.left = tree
+            				tree.left = self.left		            				            				
+		
+		*Traversal DFS:*		
+			
+			in-order:
+			Means to visit left - root - right.
+		
+			pre-order:
+			
+			Means to visit root - left - right.
+		
+			post-order:
+			
+			Means to visit left - right - root.
+							
+		<img src="https://lh5.googleusercontent.com/UJ2215Do8WXMUhPw9LBLJgM4-SERRD0q-r0rAPtl1s2sRpxCDMfpLlZrcJhSWvI_de4-IFfOipn2LlA=w2560-h1639-rw" style="width:100%">
+		
 		*Operations:*
     
-    		.
+    		Balanced tree:
+    		
+    		add   	#O(log(n)) 		
+    		search	#O(log(n))    		
+    		delete	#O(log(n))
 		
 		*Typical use:*
     
-    		.
+    		* Object hierarchies
     		
-    	*Problem clues:*
-    
-    		.
+    		* Filesystem traversal, e.g. using recursive DFS:
+    		
+    			def disk_usage(path):
+					"""Return the number of bytes used by a file/folder and any descendents."""
+					total = os.path.getsize(path) # account for direct usage
+					if os.path.isdir(path): # if this is a directory,
+						for filename in os.listdir(path): # then for each child:
+							childpath = os.path.join(path, filename) # compose full path to child
+							total += disk_usage(childpath)
 
+					print "%s bytes or %s Mb or %s Gb -- for path >>  %s" % (format(total,",d"), format(total//1000000,",d"), format(total/1000000000,",d"), path) # descriptive output (optional)
+					return total # return the grand total
+    		
+    	
 		**<span style="color:#86C163">TRIE</span>**
 
 		*Description:*	
 		
-			A trie is a variant of an n-ary tree in which characters are stored at each node. Each path down the tree may represent a word.	   		
+			The term trie comes from retrieval. A trie is a variant of an n-ary tree in which characters are stored at each node. Each path down the tree may represent a word. Using trie, search complexities can be brought to optimal limit (key length). If we store keys in binary search tree, a well balanced BST will need time proportional to M * log N, where M is maximum string length and N is number of keys in tree. Using trie, we can search the key in O(M) time. However the penalty is on trie storage requirements. Insert and search costs O(key_length), however the memory requirements of trie is O(ALPHABET_SIZE * key_length * N) where N is number of keys in trie. T	   		
 	
 		*Implementation:*
     
-    		.	   		
+    		def make_trie(*args):
+    			"""
+    			Make a trie by given words.
+    			"""
+    			trie = {}
+ 
+    			for word in args:
+        			if type(word) != str:
+            			raise TypeError("Trie only works on str!")
+        			temp_trie = trie
+        			for letter in word:
+            			temp_trie = temp_trie.setdefault(letter, {})
+        			temp_trie = temp_trie.setdefault('_end_', '_end_')
+ 
+    			return trie  		
+    			
+    		if __name__ == '__main__':
+    			trie = make_trie('hello', 'abc', 'baz', 'bar', 'barz')
+    			print trie
 	
 		*Operations:*
     
-    		.
+    		def in_trie(trie, word):
+    			"""
+    			Detect if word in trie.
+    			"""
+    			if type(word) != str:
+        			raise TypeError("Trie only works on str!")
+ 
+    			temp_trie = trie
+    			for letter in word:
+        			if letter not in temp_trie:
+            			return False
+        			temp_trie = temp_trie[letter]
+    			return True
+ 
+ 
+			def remove_from_trie(trie, word, depth):
+    			"""
+    			Remove certain word from trie.
+    			"""
+    			if word and word[depth] not in trie:
+        			return False
+ 
+    			if len(word) == depth + 1:
+        			del trie[word[depth]]
+        			if not trie:  # Node becomes a leaf, indicate its parent to delete it.
+            			return True
+        			return False
+    			else:
+        			temp_trie = trie
+ 
+        			# Recursively climb up to delete.
+        			if remove_from_trie(temp_trie[word[depth]], word, depth + 1):
+            			if temp_trie:
+                			del temp_trie[word[depth]]
+            			return not temp_trie
+    			return False
 		
 		*Typical use:*
     
-    		.
+    		* Store associative array where the keys are usually strings
     		
-    	*Problem clues:*
-    
-    		.
 
 
 **<span style="color:#F73D16; font-weight:900; font-size:18px">PYTHON [TRICKS](http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html) & [BUILT-INS](https://docs.python.org/2/library/functions.html)</span>**
@@ -1905,55 +2105,7 @@
 		alist = quickSort(alist)
 		print(alist)
 
-**SEARCH**
-
-
-* GRAPH SEARCH
-
-		Breadth first and depth first are useful graph traversal and searching algorithms. 
-		
-		DFS is typically the easiest if we want to visit every node in the graph, or at least visit every node until we find whatever we're looking for. However, if we have a very large tree and want to be prepared to quit when we get too far from the original node, DFS can be problematic; we might search thousands of ancestors of the node, but never even search all of the node's children. In these cases, BFS is typically preferred
-		
-		This is an excellent representation in python. Given the graph implementation in section Data Structures:
-		
-				def find_path(self, start_vertex, end_vertex, path=[]):
-			        """ find a path from start_vertex to end_vertex 
-			            in graph """
-			        graph = self.__graph_dict
-			        path = path + [start_vertex]
-			        if start_vertex == end_vertex:
-			            return path
-			        if start_vertex not in graph:
-			            return None
-			        for vertex in graph[start_vertex]:
-			            if vertex not in path:
-			                extended_path = self.find_path(vertex, 
-			                                               end_vertex, 
-			                                               path)
-			                if extended_path: 
-			                    return extended_path
-			        return None
-
-			    def find_all_paths(self, start_vertex, end_vertex, path=[]):
-			        """ find all paths from start_vertex to 
-			            end_vertex in graph """
-			        graph = self.__graph_dict 
-			        path = path + [start_vertex]
-			        if start_vertex == end_vertex:
-			            return [path]
-			        if start_vertex not in graph:
-			            return []
-			        paths = []
-			        for vertex in graph[start_vertex]:
-			            if vertex not in path:
-			                extended_paths = self.find_all_paths(vertex, 
-			                                                     end_vertex, 
-			                                                     path)
-			                for p in extended_paths: 
-			                    paths.append(p)
-			        return paths
-
-			    
+**SEARCH**			    
 
 * BINARY SEARCH
 
