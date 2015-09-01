@@ -34,7 +34,7 @@
 	* DEEP DIVE INTO MBOILERPLATE AS A HARD|COOL PROJECT (NOSQL, CLOUD BASED, SCALABLE, EXTENDIBLE, LOW-COST: SHOW 
 	  HOW I LOVE TO BUILD STUFF FAST)
 	* THINK OF INCLUDING NIGHTS AND WEEKENDS: OPENCITYAPPS.MX, IPAB, EDUCTIVISM, EMULATED CDMA, NETWORK PALS...
-
+<br><br><br><br>
 >
 ### PROCESS
 	1. GET INTERVIEW OUTFIT DRY CLEANED IF NECESSARY
@@ -127,7 +127,7 @@
 			  local variables only
 			  limit on stack size (OS-dependent)
 			  variables cannot be resized
-
+<br><br><br><br><br><br><br><br><br><br><br><br>
 **The Heap**: *global scope variables making use of pointers ( * )*
 	
 		What is the heap? 
@@ -172,7 +172,8 @@
 		heap. The allocation of heap space for Python objects and other internal buffers is performed on demand by the 
 		Python memory manager through the Python/C API functions.
 		
-		locals() & gloabls() built-in functions output a dictionary of all in-memory variables	
+		locals() & gloabls() built-in functions output a dictionary of all in-memory variables
+<br><br><br><br><br><br><br><br>	
 <span style="color:#7EB932; font-weight:900; font-size:18px">BIG-O</span>
 <hr style="border-color:#7EB932">
 <img src="https://raw.githubusercontent.com/chuycepeda/python-ds/master/big-O/big%20o%20growth%20rates.png" style="width:80%; margin-left:10%">
@@ -184,7 +185,7 @@
 <img src="https://raw.githubusercontent.com/chuycepeda/python-ds/master/big-O/graph%20ops.png" style="width:100%; margin-left:0%">
 	
 <img src="https://raw.githubusercontent.com/chuycepeda/python-ds/master/big-O/heap%20ops.png" style="width:100%; margin-left:0%">		
-
+<br><br><br><br><br><br><br><br>
 <span style="color:#7EB932; font-weight:900; font-size:18px">BIT MANIPULATION</span>
 <hr style="border-color:#7EB932">
 
@@ -331,7 +332,7 @@
                 		break
             		sieve[bottom::si] = [0] * -((bottom - top) // si)
     		return [2] + [el for el in sieve if el]
-
+<br><br>
 **Probability**
 	
 	A conditional 'intersection' of probabilities is calculated as the product of two or more probabilities (logical AND). Example given 1 to 10 (inclusive):
@@ -379,7 +380,7 @@
 <hr style="border-color:#7EB932">
 
 	The implementation of classes and methods to sketch out technical problems or real-life objects.
-	
+<br><br>	
 **How-to approach OOD**
 	
 		STEP 1. Handle ambiguity
@@ -490,7 +491,7 @@
 
 		class MySingleton(object):
     		__metaclass__ = Singleton
-    		
+<br><br><br><br>    		
 **Factory design pattern**    	
 
 		The Factory pattern deals with the problem of creating objects without specifying the exact class of the object to be created. You give a parameter in order to know which class to instantiate.
@@ -582,7 +583,7 @@
 	SQL Denormalization: databse that looks for highly scalable systems and faster queries (less joins).
 	
 	NoSQL Leverages continual change in place, and speed of deployment.
-		
+<br><br><br><br><br><br><br><br>		
 **DESIGN (recall How-to approach OOD)**
 		
 	SMALL DATABASE
@@ -614,7 +615,7 @@
 	Pros: reduced index size, which generally improves search performance. 
 		
 	Cons: heavier reliance on the interconnect between servers, increased latency when querying, issues of consistency, more complex failover and backups.
-		
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>		
 **NoSQL**
 
 	Focuses on large-volume and semi-structured data. Alleviates the problems that RDBMS imposes and makes it easy to work with large sparse data, but in turn takes away the power of transactional integrity and flexible indexing and querying.
@@ -652,7 +653,7 @@
 	Pros:
 		- I no longer have to worry about making my application run in multiple Web servers: most servers, and all frameworks, are WSGI compliant.
 		- WSGI is Python's Answer to Ruby On Rails
-
+<br><br><br><br><br>
 <span style="color:#7EB932; font-weight:900; font-size:18px">Why Cloud Computing ?</span>
 <hr style="border-color:#7EB932">
 	
@@ -677,11 +678,11 @@
 <hr style="border-color:#7EB932">
 
 
-<img src="https://lh4.googleusercontent.com/vKBRfdfbZamxqBNQB9QGR-9Rc2k42v6LGsyOOpELcABEOHrXtrz8nQKGYN5M-JEHmjlYwL6N33hwngw=w2560-h1639-rw" style="width:100%">
+<img src="https://lh3.googleusercontent.com/CXw792zUI-3fgleD7UK_sk1VEzoo5Ey71hSdgD0YTrGDQlm1uGDyeK07bB6gBn_ejXPf6cHsOu0f0KU=w2560-h1639-rw" style="width:100%">
 
 
 
-<br>
+<br><br><br><br><br><br><br><br>
 
 		
 
@@ -728,7 +729,7 @@
 	Engineers had to work with two data stores and very different data models: a large cluster of MySQL servers for storing data persistently in relational tables, and an equally large collection of memcache servers for storing and serving flat key-value pairs derived (some indirectly) from the results of SQL queries.
 	
 	For hardware details, look at: http://www.opencompute.org/
-
+<br><br><br><br>
 <span style="color:#612EE0; font-weight:900; font-size:18px">SCALABILITY & MEMORY LIMITS</span>
 <hr style="border-color:#612EE0">
 **STEP BY STEP APPROACH**
@@ -765,20 +766,20 @@
 	
 	The most commonly used in interviews are:
 	
-	* Mergesort
-	* Quicksort
-	* Bucket sort
+	* Mergesort: divide the n elements list into n lists of 1 element, keep on merging and sorting all sublists.
+	* Quicksort: pick a pivot and push left all smaller values, and right all greater. do it recursively with left and right.
+	* Bucket sort: divide the n elements list into m buckets with n/m elements, sort each bucket and merge.
 	
 	Python sort and sorted methods use mergesort algorithms, thus being quasilinear in complexity.
-
+<br><br><br><br>
 **SEARCHING**
 
 	Master the following algorithms:
 	
-	* Binary search
-	* Breadth first search (BFS)
-	* Depth first search (DFS)
-	* Binary tree traversal
+	* Binary search: given a sorted array, find an element dividing in halves recursively.
+	* Breadth first search (BFS): given a tree structure, start at the root and output nodes in an horizontal-first approach.
+	* Depth first search (DFS): given a tree structure, start at the root and output nodes in a vertical-first approach.
+	* Binary tree traversal: traverse a tree in BFS or DFS (in-order, pre-order, post-order)
 	
 	
 <span style="color:#612EE0; font-weight:900; font-size:18px">UNIT TESTING</span>
@@ -812,7 +813,7 @@
 		if __name__ == '__main__':
 			unittest.main()
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 <span style="color:#612EE0; font-weight:900; font-size:18px">GOOGLE DATASTORE AND APPENGINE SCALABILITY</span>
 <hr style="border-color:#612EE0">
 	As previously referred, Google's Datastore is a managed, NoSQL, schemaless database for storing non-relational data. Cloud Datastore automatically scales as you need it and supports transactions as well as robust, SQL-like queries. It runs in the available instance of a given application.
@@ -883,19 +884,36 @@
 <hr style="border-color:#F73D16">
 * <span style="color: #FF4081">LIST</span>
 
-	*Description:*
+   *Description:*
     
-    	The list type is a container that holds a number of other objects,
-    	in a given order. The list type implements the sequence protocol,
-    	and also allows you to add and remove objects from the sequence.
+    	The list type is a container that holds a number of other objects, in a given order. The list type implements the sequence protocol, and also allows you to add and remove objects from the sequence.
 	
-	*Implementation:*
+   *Implementation:*
     
     	l = [1,2,3]
     	l = [1,'word',3]
     	l[0] = 1	   		
 	
-	*Operations:*
+    
+   *Typical use:*
+    
+        When you need a mixed collection of data all in one place.
+       
+        When the data needs to be ordered.
+       
+        When your data requires the ability to be changed or extended. Remember,lists are mutable.
+       
+        When you don't require data to be indexed by a custom value. Lists are numerically indexed and to retrieve an element, you must know its numeric position in the list.
+       
+        When you need a stack or a queue. Lists can be easily manipulated by appending/removing elements from the beginning/end of the list.
+       
+        When your data doesn't have to be unique. For that, you would use sets.
+       
+    	When you need order as LIFO:  the stack implementation (append(), pop())
+    	
+    	When you need order as FIFO:  the deque implementation (append(), popleft())
+ 
+ 	*Operations:*
     
     	Operation     | Example      | Complexity       | Notes
 		--------------+--------------+---------------+-------------------------------
@@ -935,29 +953,7 @@
 		Sort          | l.sort()     | O(N Log N)    | key/reverse change original l
               		  | sorted(l)    | O(N Log N)    | key/reverse doesn't change original l
 		Multiply      | k*l          | O(k N)        | 5*l is O(N): len(l)*l is O(N**2)
-       
-    *Typical use:*
-    
-        When you need a mixed collection of data all in one place.
-       
-        When the data needs to be ordered.
-       
-        When your data requires the ability to be changed or extended. Remember, 
-        lists are mutable.
-       
-        When you don't require data to be indexed by a custom value. Lists are 
-        numerically indexed and to retrieve an element, you must know its numeric 
-        position in the list.
-       
-        When you need a stack or a queue. Lists can be easily manipulated by 
-        appending/removing elements from the beginning/end of the list.
-       
-        When your data doesn't have to be unique. For that, you would use sets.
-       
-    	When you need order as LIFO:  the stack implementation (append(), pop())
-    	
-    	When you need order as FIFO:  the deque implementation (append(), popleft())
-    	
+          	
 		
 	* <span style="color: #FF4081">TUPLE</span>
 
@@ -980,17 +976,20 @@
 
 	*Description:*	
 		
-		A set is an unordered collection with no duplicate elements. 
-      	Basic uses include membership testing and eliminating duplicate entries. 
-      	Set objects also support mathematical operations like union, intersection, 
-      	difference, and symmetric difference. Sets have many more operations that 
-      	are O(1) compared with lists and tuples.
+		A set is an unordered collection with no duplicate elements. Basic uses include membership testing and eliminating duplicate entries. Set objects also support mathematical operations like union, intersection, difference, and symmetric difference. Sets have many more operations that are O(1) compared with lists and tuples.
       	
-      	Not needing to keep values in a specific order (which lists/tuples require)
-      	allows for faster operations.
+      	Not needing to keep values in a specific order (which lists/tuples require) allows for faster operations.
       	
-      	Frozen sets support all operations that do not mutate the data structure 
-      	(and with the same complexity classes).	   		
+      	Frozen sets support all operations that do not mutate the data structure.	
+    *Typical use:*
+    
+    	When you need a unique set of data: Sets check the unicity of elements based on hashes.
+    	
+      	When your data constantly changes: Sets, just like lists, are mutable.
+      	
+      	When you need a collection that can be manipulated mathematically: with sets it's easy to do operations like difference, union, intersection, etc.
+      	
+      	When you don't need to store nested lists, sets, or dictionaries in a data structure: Sets don't support unhashable types.		
 	
 	*Implementation:*
     
@@ -1050,18 +1049,8 @@
 		Iteration     | for v in s:  | O(N)          |
 		Copy          | s.copy()     | O(N)	         |
 		
-	*Typical use:*
-    
-    	When you need a unique set of data: Sets check the unicity of elements based on hashes.
-    	
-      	When your data constantly changes: Sets, just like lists, are mutable.
-      	
-      	When you need a collection that can be manipulated mathematically: with sets it's easy to do operations like 
-      	difference, union, intersection, etc.
-      	
-      	When you don't need to store nested lists, sets, or dictionaries in a data structure: Sets don't support unhashable 
-      	types.
 
+<br><br>
 
 * <span style="color: #8AC258">DICTIONARY</span>
 
@@ -1421,7 +1410,7 @@
 							queue.append(child)
 		
 			Note: the given python class for graph implementation has its own search methods.
-    	
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    	
 
 	* <span style="color: #8AC258">TREES</span>
 	
@@ -1496,7 +1485,7 @@
 			
 			Means to visit left - right - root.
 							
-		<img src="https://lh5.googleusercontent.com/UJ2215Do8WXMUhPw9LBLJgM4-SERRD0q-r0rAPtl1s2sRpxCDMfpLlZrcJhSWvI_de4-IFfOipn2LlA=w2560-h1639-rw" style="width:100%">
+		<img src="https://lh3.googleusercontent.com/WXz7Yku-7Ef4koXzCjYTBRzCeHe2jZlrObNtN90g6A4r0yR09hjoLHWJdFU5KhzLpWfe_gQ8FF31Oaw=w2560-h1639-rw" style="width:100%">
 		
 		*Operations:*
     
@@ -1523,7 +1512,7 @@
 					print "%s bytes or %s Mb or %s Gb -- for path >>  %s" % (format(total,",d"), format(total//1000000,",d"), format(total/1000000000,",d"), path) # descriptive output (optional)
 					return total # return the grand total
     		
-    	
+    	<br><br><br><br><br><br><br><br><br><br>
 		**<span style="color:#86C163">TRIE</span>**
 
 		*Description:*	
@@ -1596,7 +1585,7 @@
     		* Store associative array where the keys are usually strings
     		
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 **<span style="color:#F73D16; font-weight:900; font-size:18px">PYTHON [TRICKS](http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html) & [BUILT-INS](https://docs.python.org/2/library/functions.html)</span>**
 <hr style="border-color:#F73D16">
 
@@ -1653,7 +1642,7 @@
 	>>> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
 	>>> list(enumerate(seasons))
 	[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
-
+<br><br>
 **Flattening**
 
 	>>> a = [1, 2, [3, 4], [[5, 6], [7, 8]]]
@@ -1758,7 +1747,7 @@
     	print('An error occurred: %s' % (format(e.args[-1])))
 	finally:
     	print("This would be printed even if no exception occurs!")
-
+<br><br><br><br><br><br>
 **Lambdas**
 
 	Lambdas are one line functions. They are also known as anonymous functions in some other languages. You might want to use lambdas when you don’t want to use a function twice in a program. They are just like normal functions and even behave like them.
@@ -1772,15 +1761,16 @@
 	>>> print(a)
 	# Output: [(13, -3), (4, 1), (1, 2), (9, 10)]
 	
-**Built-ins**
+**DIVMOD**
 
-	DIVMOD
+	
 	>>> divmod(5,2)
 	(2, 1)
 	>>> 5 % 2
 	1
 	
-	SORTING
+**Sorting**
+
 	>>> sorted([5, 2, 3, 1, 4])
 	[1, 2, 3, 4, 5]
 	>>> sorted([5, 2, 3, 1, 4], reverse=True)
@@ -1809,8 +1799,9 @@
 	]
 	>>> sorted(student_objects, key=lambda student: student.age)   # sort by age
 	[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
+<br><br><br><br><br>
+**Complete list of built-ins**
 
-	COMPLETE LIST 	
 	abs()	divmod()	input()	open()	staticmethod(
 	all()	enumerate()	int()	ord()	str()
 	any()	eval()	isinstance()	pow()	sum()
@@ -1859,36 +1850,7 @@
 	>>> counter
 	7
 	
-
-**Random** *(python module)*
-
-	random (https://docs.python.org/2.7/library/random.html)
-		
-		This module implements pseudo-random number generators for various distributions.
-		For integers, uniform selection from a range. For sequences, uniform selection of a random element, a function 
-		to generate a random permutation of a list in-place, and a function for random sampling without replacement.
-
-	EXAMPLE 
-	
-	>>> random.random()        # Random float x, 0.0 <= x < 1.0
-	0.37444887175646646
-	>>> random.uniform(1, 10)  # Random float x, 1.0 <= x < 10.0
-	1.1800146073117523
-	>>> random.randint(1, 10)  # Integer from 1 to 10, endpoints included
-	7
-	>>> random.randrange(0, 101, 2)  # Even integer from 0 to 100
-	26
-	>>> random.choice('abcdefghij')  # Choose a random element
-	'c'
-	>>> items = [1, 2, 3, 4, 5, 6, 7]
-	>>> random.shuffle(items)
-	>>> items
-	[7, 3, 2, 5, 6, 4, 1]
-	>>> random.sample([1, 2, 3, 4, 5],  3)  # Choose 3 elements
-	[4, 1, 5]
-	
-	
-
+<br><br><br><br><br><br><br><br><br>
 **Collections** *(python module)*
 
 	collections (https://docs.python.org/2.7/library/collections.html)
@@ -1950,6 +1912,34 @@
 	>>> print(json.dumps(some_dict))
 	{"colours": {"favourite": "yellow"}}
 
+
+**Random** *(python module)*
+
+	random (https://docs.python.org/2.7/library/random.html)
+		
+		This module implements pseudo-random number generators for various distributions.
+		For integers, uniform selection from a range. For sequences, uniform selection of a random element, a function 
+		to generate a random permutation of a list in-place, and a function for random sampling without replacement.
+
+	EXAMPLE 
+	
+	>>> random.random()        # Random float x, 0.0 <= x < 1.0
+	0.37444887175646646
+	>>> random.uniform(1, 10)  # Random float x, 1.0 <= x < 10.0
+	1.1800146073117523
+	>>> random.randint(1, 10)  # Integer from 1 to 10, endpoints included
+	7
+	>>> random.randrange(0, 101, 2)  # Even integer from 0 to 100
+	26
+	>>> random.choice('abcdefghij')  # Choose a random element
+	'c'
+	>>> items = [1, 2, 3, 4, 5, 6, 7]
+	>>> random.shuffle(items)
+	>>> items
+	[7, 3, 2, 5, 6, 4, 1]
+	>>> random.sample([1, 2, 3, 4, 5],  3)  # Choose 3 elements
+	[4, 1, 5]
+		
 **Heapq** *(python module)*
 
 	heapq (https://docs.python.org/2.7/library/heapq.html)
@@ -1971,7 +1961,7 @@
 	>>> heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
 	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 	
-
+<br><br><br><br><br><br><br>
 **Time** *(python module)*
 
 	time (https://docs.python.org/2.7/library/time.html)
@@ -2012,7 +2002,7 @@
 	2.0
 	>>> math.factorial(4)
 	24
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 **re** *(python module)*
 
 	re (https://docs.python.org/2/howto/regex.html)
@@ -2033,7 +2023,7 @@
 	>>> p = re.compile( '(blue|white|red)')
 	>>> p.sub( 'colour', 'blue socks and red shoes')
 	'colour socks and colour shoes'
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 **<span style="color:#F73D16; font-weight:900; font-size:18px">ALGORITHMS</span>**
 <hr style="border-color:#F73D16">
 **SORT**
@@ -2084,6 +2074,7 @@
 		alist = [54,26,93,17,77,31,44,55,20]
 		mergeSort(alist)
 		print(alist)
+<br><br><br><br><br>
 	
 * QUICK-SORT
 
@@ -2126,10 +2117,13 @@
 					else:
 						return binary_search(S[:mid-1], target)
 
+* DFS & BFS
+
+<img src="https://lh6.googleusercontent.com/uQGAASnqKO7bWo_ibl6lV3Vt49zj1vfhvZzrbY1yRy39Whc1qK7RJ8Mbjv_a3uZawMiSxhq6f5IFyUQ=w2560-h1558-rw" style="width:70%; margin-left:15%">
 
 
 
-<br><br>
+<br><br><br>
 # THE OFFER
 	HINT: HANDLE THE POST-INTERVIEW STRESS
 	- Think of deadlines and extensions if necessary
@@ -2164,16 +2158,6 @@
 + HAPPINESS FACTOR
 
 	Think of the product, the culture, working hours, and if possible meet your Manager and Teammates.
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
