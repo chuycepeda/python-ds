@@ -29,15 +29,26 @@ class BinaryTree():
             self.left = BinaryTree(newNode)
         else:
             tree = BinaryTree(newNode)
-            self.left = tree
             tree.left = self.left
-
-
-def printTree(tree):
-        if tree != None:
-            printTree(tree.getLeftChild())
-            print(tree.getNodeValue())
-            printTree(tree.getRightChild())
+            self.left = tree
+    def preOrder(self):
+        print(self.rootid)
+    	if self.left:
+        	self.left.inOrder()
+        if self.right:
+        	self.right.inOrder()
+    def inOrder(self):
+    	if self.left:
+        	self.left.inOrder()
+        print(self.rootid)
+        if self.right:
+        	self.right.inOrder()
+    def postOrder(self):
+    	if self.left:
+        	self.left.inOrder()
+        if self.right:
+        	self.right.inOrder()
+        print(self.rootid)
             
 
 
@@ -46,9 +57,16 @@ def printTree(tree):
 def testTree():
     myTree = BinaryTree("Maud")
     myTree.insertLeft("Bob")
+    myTree.insertLeft("Lisa")
     myTree.insertRight("Tony")
     myTree.insertRight("Steven")
-    printTree(myTree)
+    print 'inorder----------------'
+    myTree.inOrder()
+    print 'preorder----------------'
+    myTree.preOrder()
+    print 'postorder----------------'
+    myTree.postOrder()
+
 
 
 if __name__ == '__main__':

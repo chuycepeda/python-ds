@@ -51,7 +51,13 @@ def hanoi(n, source, helper, target):
         # move tower of size n-1 from helper to target
         hanoi(n - 1, helper, source, target)
         
-
+def sieve(n):
+    ignore = []
+    primes = []  
+    for i in range(1,n+1):
+        ignore += [i for x in range(1,len(primes)) if i % primes[x] == 0]
+        primes += [i for x in range(1) if i not in set(ignore)] 
+    print primes
 
 if __name__ == '__main__':
 	#TEST 1
